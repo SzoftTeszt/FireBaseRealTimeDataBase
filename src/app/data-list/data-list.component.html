@@ -1,0 +1,44 @@
+<!-- {{oszlopok}}
+{{konyvek | json}} -->
+<div class="row">
+    <div *ngFor="let o of oszlopok" class="col">
+        {{o}}
+    </div>
+    <div class="col">Műveletek</div>
+</div>
+
+<div class="row">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input class="form-control" [(ngModel)]="ujKonyv[oszlop]">
+    </div>
+    <div class="col">
+        <button (click)="addBook(ujKonyv)" class="btn btn-primary">Hozzáadás</button>
+    </div>  
+</div>
+
+<div *ngFor="let konyv of konyvek" class="row">
+    
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        <input class="form-control" [(ngModel)]="konyv[oszlop]">
+    </div>
+    <div class="col">
+        <button (click)="deleteBook(konyv)" class="btn btn-primary">Törlés</button>
+        <button (click)="updateBook(konyv)" class="btn btn-primary">Szerkesztés</button>
+    </div>  
+</div>
+
+
+<!-- <div *ngFor="let konyv of konyvek" class="row">
+    <div *ngFor="let oszlop of oszlopok" class="col">
+        {{konyv[oszlop]}}
+    </div> -->
+    <!-- <div class="col">
+        {{konyv['id']}}
+    </div>
+    <div  class="col">
+        {{konyv.cim}}
+    </div>
+    <div class="col">
+        {{konyv.iro}}
+    </div>
+</div> --> -->
